@@ -1,3 +1,4 @@
+// 1st approaach
 var climbStairs = function (n) {
   if (n < 2) return 1;
   let firstStep = 1;
@@ -10,3 +11,7 @@ var climbStairs = function (n) {
   }
   return thirdStep;
 };
+// 2nd approach
+function climbStairs(n) {
+  return n <= 3 ? n : 2 * climbStairs(n - 2) + climbStairs(n - 3);
+}
