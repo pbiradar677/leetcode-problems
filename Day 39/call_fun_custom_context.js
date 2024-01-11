@@ -15,6 +15,7 @@ function increment() {
   this.count++;
   return this.count;
 }
+// call a function with callPolyfill
 let result = increment.callPolyfill({ count: 10 });
 
 console.log(result); // 2
