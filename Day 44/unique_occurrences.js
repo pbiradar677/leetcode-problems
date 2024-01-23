@@ -5,20 +5,27 @@
  * @param {number[]} arr
  * @return {boolean}
  */
+// 1st approach
+// var uniqueOccurrences = function (arr) {
+//   let occurance = {};
+//   for (let value of arr) {
+//     occurance[value] = (occurance[value] || 0) + 1;
+//   }
+//   let newArr = Object.values(occurance);
+
+//   for (let i = 0; i < newArr.length; i++) {
+//     if (newArr.indexOf(newArr[i]) !== i) return false;
+//   }
+//   return true;
+// };
 var uniqueOccurrences = function (arr) {
   let occurance = {};
   for (let value of arr) {
-    if (!occurance[value]) {
-      occurance[value] = 0;
-    }
-    occurance[value]++;
+    occurance[value] = (occurance[value] || 0) + 1;
   }
-  let newArr = Object.entries(occurance).map((item) => item[1]);
+  let newArr = new Set(Object.values(occurance));
 
-  for (let i = 0; i < newArr.length; i++) {
-    if (newArr.indexOf(newArr[i]) !== i) return false;
-  }
-  return true;
+  return newArr.size === Object.values(occurance).length;
 };
 
 let arr = [1, 2, 2, 1, 1, 3];
