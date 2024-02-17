@@ -61,5 +61,5 @@ var furthestBuilding = function (heights, bricks, ladders) {
 const heights = [4, 2, 7, 6, 9, 14, 12],
   bricks = 5,
   ladders = 1;
-console.log("result: ", furthestBuilding);
+console.log("result:  ", furthestBuilding(heights, bricks, ladders));
 //Output: 4
